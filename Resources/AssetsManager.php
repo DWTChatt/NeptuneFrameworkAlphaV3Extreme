@@ -1,6 +1,7 @@
 <?php
 $scriptName = explode('index.php', $_SERVER['SCRIPT_NAME']);
 $scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
+if($scriptName[1] == 'Resources') { $scriptName[1] = '';}
 define('BASE_URL', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/' . $scriptName[1]);
 define('APPLICATIONS_DIR', BASE_URL . '/Applications');
 define('CONTROLLERS_DIR', APPLICATIONS_DIR . '/Controllers');
@@ -31,7 +32,6 @@ require "../System/Libraries/Upload/Upload.php";
 require "../System/Libraries/Error/Error.php";
 require "../System/Libraries/Validator/ErrorHandler.php";
 require "../System/Libraries/Validator/Validator.php";
-require "../System/Libraries/JS/JS.php";
 require "../System/Libraries/CSS/CSS.php";
 require "../System/Core/Cookie.php";
 require "../System/Core/Classes.php";
