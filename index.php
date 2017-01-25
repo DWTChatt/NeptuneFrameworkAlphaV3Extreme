@@ -1,6 +1,10 @@
 <?php
 $scriptName = explode('index.php', $_SERVER['SCRIPT_NAME']);
 $scriptName = explode('/', $_SERVER['SCRIPT_NAME']);
+if($scriptName[1] == 'index.php')
+{
+    $scriptName[1] = '';
+}
 define('BASE_URL', $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/' . $scriptName[1]);
 define('APPLICATIONS_DIR', BASE_URL . '/Applications');
 define('CONTROLLERS_DIR', APPLICATIONS_DIR . '/Controllers');
