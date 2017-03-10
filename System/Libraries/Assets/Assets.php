@@ -25,12 +25,9 @@ class Assets
         }
     }
     public function getAssetsGroup($group){
-        $assets = $this->assets;
-        if(array_search($group, $assets) != FALSE){
+
             $this->group = $group;
             return $this;
-        }
-        return $this;
     }
     public function createAsset($name, $type, $url, $id, $preference = null){
         $assets = $this->assets;
